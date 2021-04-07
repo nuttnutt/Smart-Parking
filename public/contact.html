@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการลานจอดรถ</title>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/smart-parkingblack.png" />
+
+    <!-- Import lib -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome-free/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <!-- End import lib -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 100%;
+    }
+    
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    .container {
+      padding: 2px 16px;
+    }
+    </style>
+
+<body class="overlay-scrollbar">
+    <!-- navbar -->
+    <div class="navbar">
+        <!-- nav left -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fas fa-bars" onclick="collapseSidebar()"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <img src="assets/smart-parkingblack.png" alt="parkingblack" class="logo logo-light">
+                <img src="assets/smart-parkingwhite.png" alt="parkingwhite" class="logo logo-dark">
+            </li>
+        </ul>
+        <!-- end nav left -->
+
+        <!-- nav right -->
+        <ul class="navbar-nav nav-right">
+            <li class="nav-item mode">
+                <a class="nav-link" href="#" onclick="switchTheme()">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- end nav right -->
+    </div>
+    <!-- end navbar -->
+    <!-- sidebar -->
+    <div class="sidebar">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+                <a href="/#" class="sidebar-nav-link">
+                    <div>
+                        <i class="fab fa-accusoft"></i>
+                    </div>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a href="contact" class="sidebar-nav-link active">
+                    <div>
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <span>CONTACT</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+    <!-- main content -->
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-m">
+                <div class="card">
+                <img src="assets/nut.jpg" alt="nut" style="width: 100%; overflow: hidden;">
+                 <div class="container">
+                    <div class="card-content">
+                  <h4><b>นายอัคเดช แก่นแก้ว</b></h4> 
+                  <p>Tel:0808623281</p> 
+                  <p>Email:s6011423148@pkru.ac.th</p> 
+                </div>
+                 </div>
+                </div>
+            </div>
+            <div class="col-m">
+                <div class="card">
+                <img src="assets/act.jpg" alt="act" style="width: 100%; overflow: hidden;">
+                <div class="container">
+                <div class="card-content">
+                  <h4><b>นายณัทกิตติ์ ชาวชน</b></h4> 
+                  <p>Tel:0980174028</p> 
+                  <p>Email:s6011423111@pkru.ac.th</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+            <!-- <div class="card col-lg-12">
+                <h3>sdkfmsdlkmlksmglksdfg</h3>
+            </div> -->
+
+            <!-- <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-primary">
+                    <p>
+                        <i class="fas fa-car"></i>
+                    </p>
+                    <p>นำรถไปช่องจอดที่</p>
+                    <h3>...</h3>
+
+                </div>
+            </div>
+            <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-warning">
+                    <p>
+                        <i class="fas fa-spinner"></i>
+                    </p>
+                    <p>จำนวนช่องว่าง</p>
+                    <h3>...</h3>
+
+                </div>
+            </div>
+            <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-success">
+                    <p>
+                        <i class="fas fa-check-circle"></i>
+                    </p>
+                    <p>จำนวนช่องทั้งหมด</p>
+                    <h3>...</h3>
+                </div>
+            </div> -->
+            <!-- <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-danger">
+                    <p>
+                        <i class="fas fa-bug"></i>
+                    </p>
+                    <h3>100+</h3>
+                    <p>Issues</p>
+                </div>
+            </div> -->
+        
+    </div>
+    <!-- end main content -->
+    <!-- import script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <!-- end import script -->
+    <script src="app/index2.js"></script>
+</body>
+
+</html>
